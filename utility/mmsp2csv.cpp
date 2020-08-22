@@ -673,7 +673,6 @@ template <int dim, typename T> void convert_scalars(const MMSP::grid<dim,T>& GRI
 
 template <int dim, typename T> void convert_vectors(const MMSP::grid<dim,MMSP::vector<T> >& GRID, std::ofstream& csvfil)
 {
-
 	if (dim==1) {
 		for (int n=0; n<MMSP::nodes(GRID); n++) {
 			MMSP::vector<int> x=MMSP::position(GRID,n);
