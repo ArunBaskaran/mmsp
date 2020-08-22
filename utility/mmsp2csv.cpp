@@ -644,99 +644,37 @@ int main(int argc, char* argv[])
 
 template <int dim, typename T> void convert_scalars(const MMSP::grid<dim,T>& GRID, std::ofstream& csvfil)
 {
-	if (dim==1) {
-		for (int n=0; n<MMSP::nodes(GRID); n++) {
-			MMSP::vector<int> x=MMSP::position(GRID,n);
-			csvfil << dx(GRID,0)*x[0];
-			for (int d=1; d<dim; d++)
-				csvfil << ',' << dx(GRID,d)*x[d];
-			csvfil << GRID(n) << '\n';
-		}
-	} else if (dim==2) {
-		for (int n=0; n<MMSP::nodes(GRID); n++) {
-			MMSP::vector<int> x=MMSP::position(GRID,n);
-			csvfil << dx(GRID,0)*x[0];
-			for (int d=1; d<dim; d++)
-				csvfil << ',' << dx(GRID,d)*x[d];
-			csvfil << GRID(n) << '\n';
-		}
-	} else if (dim==3) {
-		for (int n=0; n<MMSP::nodes(GRID); n++) {
-			MMSP::vector<int> x=MMSP::position(GRID,n);
-			csvfil << dx(GRID,0)*x[0];
-			for (int d=1; d<dim; d++)
-				csvfil << ',' << dx(GRID,d)*x[d];
-			csvfil << GRID(n) << '\n';
-		}
-	}
+    for (int n=0; n<MMSP::nodes(GRID); n++) {
+        MMSP::vector<int> x=MMSP::position(GRID,n);
+        csvfil << dx(GRID,0)*x[0];
+        for (int d=1; d<dim; d++)
+            csvfil << ',' << dx(GRID,d)*x[d];
+        csvfil << GRID(n) << '\n';
+    }
 }
 
 template <int dim, typename T> void convert_vectors(const MMSP::grid<dim,MMSP::vector<T> >& GRID, std::ofstream& csvfil)
 {
-	if (dim==1) {
-		for (int n=0; n<MMSP::nodes(GRID); n++) {
-			MMSP::vector<int> x=MMSP::position(GRID,n);
-			csvfil << dx(GRID,0)*x[0];
-			for (int d=1; d<dim; d++)
-				csvfil << ',' << dx(GRID,d)*x[d];
-			for (int i=0; i<fields(GRID); i++)
-				csvfil << ',' << GRID(n)[i];
-			csvfil << '\n';
-		}
-	} else if (dim==2) {
-		for (int n=0; n<MMSP::nodes(GRID); n++) {
-			MMSP::vector<int> x=MMSP::position(GRID,n);
-			csvfil << dx(GRID,0)*x[0];
-			for (int d=1; d<dim; d++)
-				csvfil << ',' << dx(GRID,d)*x[d];
-			for (int i=0; i<fields(GRID); i++)
-				csvfil << ',' << GRID(n)[i];
-			csvfil << '\n';
-		}
-	} else if (dim==3) {
-		for (int n=0; n<MMSP::nodes(GRID); n++) {
-			MMSP::vector<int> x=MMSP::position(GRID,n);
-			csvfil << dx(GRID,0)*x[0];
-			for (int d=1; d<dim; d++)
-				csvfil << ',' << dx(GRID,d)*x[d];
-			for (int i=0; i<fields(GRID); i++)
-				csvfil << ',' << GRID(n)[i];
-			csvfil << '\n';
-		}
-	}
+    for (int n=0; n<MMSP::nodes(GRID); n++) {
+        MMSP::vector<int> x=MMSP::position(GRID,n);
+        csvfil << dx(GRID,0)*x[0];
+        for (int d=1; d<dim; d++)
+            csvfil << ',' << dx(GRID,d)*x[d];
+        for (int i=0; i<fields(GRID); i++)
+            csvfil << ',' << GRID(n)[i];
+        csvfil << '\n';
+    }
 }
 
 template <int dim, typename T> void convert_sparses(const MMSP::grid<dim,MMSP::sparse<T> >& GRID, std::ofstream& csvfil)
 {
-	if (dim==1) {
-		for (int n=0; n<MMSP::nodes(GRID); n++) {
-			MMSP::vector<int> x=MMSP::position(GRID,n);
-			csvfil << dx(GRID,0)*x[0];
-			for (int d=1; d<dim; d++)
-				csvfil << ',' << dx(GRID,d)*x[d];
-			for (int h=0; h<length(GRID(n)); h++)
-				csvfil << ',' << GRID(n).index(h) << ',' << GRID(n).value(h);
-			csvfil << '\n';
-		}
-	} else if (dim==2) {
-		for (int n=0; n<MMSP::nodes(GRID); n++) {
-			MMSP::vector<int> x=MMSP::position(GRID,n);
-			csvfil << dx(GRID,0)*x[0];
-			for (int d=1; d<dim; d++)
-				csvfil << ',' << dx(GRID,d)*x[d];
-			for (int h=0; h<length(GRID(n)); h++)
-				csvfil << ',' << GRID(n).index(h) << ',' << GRID(n).value(h);
-			csvfil << '\n';
-		}
-	} else if (dim==3) {
-		for (int n=0; n<MMSP::nodes(GRID); n++) {
-			MMSP::vector<int> x=MMSP::position(GRID,n);
-			csvfil << dx(GRID,0)*x[0];
-			for (int d=1; d<dim; d++)
-				csvfil << ',' << dx(GRID,d)*x[d];
-			for (int h=0; h<length(GRID(n)); h++)
-				csvfil << ',' << GRID(n).index(h) << ',' << GRID(n).value(h);
-			csvfil << '\n';
-		}
-	}
+    for (int n=0; n<MMSP::nodes(GRID); n++) {
+        MMSP::vector<int> x=MMSP::position(GRID,n);
+        csvfil << dx(GRID,0)*x[0];
+        for (int d=1; d<dim; d++)
+            csvfil << ',' << dx(GRID,d)*x[d];
+        for (int h=0; h<length(GRID(n)); h++)
+            csvfil << ',' << GRID(n).index(h) << ',' << GRID(n).value(h);
+        csvfil << '\n';
+    }
 }
