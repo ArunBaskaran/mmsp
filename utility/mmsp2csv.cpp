@@ -127,446 +127,517 @@ int main(int argc, char* argv[])
 	input.ignore(10, '\n');
 
 		// write grid data
-		if (scalar_type or (not vector_type and not sparse_type)) { // must be scalar or built-in
-			if (bool_type) {
-				if (dim == 1) {
-					MMSP::grid<1,bool> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,bool> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,bool> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				}
-			}
-			else if (unsigned_char_type) {
-				if (dim == 1) {
-					MMSP::grid<1,unsigned char> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,unsigned char> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,unsigned char> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				}
-			}
-			else if (char_type) {
-				if (dim == 1) {
-					MMSP::grid<1,char> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,char> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,char> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				}
-			}
-			else if (unsigned_int_type) {
-				if (dim == 1) {
-					MMSP::grid<1,unsigned int> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,unsigned int> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,unsigned int> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				}
-			}
-			else if (int_type) {
-				if (dim == 1) {
-					MMSP::grid<1,int> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,int> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,int> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				}
-			}
-			else if (unsigned_long_type) {
-				if (dim == 1) {
-					MMSP::grid<1,unsigned long> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,unsigned long> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,unsigned long> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				}
-			}
-			else if (long_type) {
-				if (dim == 1) {
-					MMSP::grid<1,long> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,long> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,long> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				}
-			}
-			else if (unsigned_short_type) {
-				if (dim == 1) {
-					MMSP::grid<1,unsigned short> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,unsigned short> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,unsigned short> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				}
-			}
-			else if (short_type) {
-				if (dim == 1) {
-					MMSP::grid<1,short> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,short> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,short> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				}
-			}
-			else if (float_type) {
-				if (dim == 1) {
-					MMSP::grid<1,float> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,float> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,float> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				}
-			}
-			else if (long_double_type) {
-				if (dim == 1) {
-					MMSP::grid<1,long double> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,long double> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,long double> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				}
-			}
-			else if (double_type) {
-				if (dim == 1) {
-					MMSP::grid<1,double> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,double> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,double> GRID(argv[1]);
-					convert_scalars(GRID, csvfil);
-				}
+	if (scalar_type or (not vector_type and not sparse_type)) { // must be scalar or built-in
+		if (bool_type) {
+			if (dim == 1) {
+				MMSP::grid<1,bool> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,bool> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,bool> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
 			}
 		}
+		else if (unsigned_char_type) {
+			if (dim == 1) {
+				MMSP::grid<1,unsigned char> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,unsigned char> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,unsigned char> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			}
+		}
+		else if (char_type) {
+			if (dim == 1) {
+				MMSP::grid<1,char> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,char> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,char> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			}
+		}
+		else if (unsigned_int_type) {
+			if (dim == 1) {
+				MMSP::grid<1,unsigned int> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,unsigned int> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,unsigned int> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			}
+		}
+		else if (int_type) {
+			if (dim == 1) {
+				MMSP::grid<1,int> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,int> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,int> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			}
+		}
+		else if (unsigned_long_type) {
+			if (dim == 1) {
+				MMSP::grid<1,unsigned long> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,unsigned long> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,unsigned long> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			}
+		}
+		else if (long_type) {
+			if (dim == 1) {
+				MMSP::grid<1,long> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,long> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,long> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			}
+		}
+		else if (unsigned_short_type) {
+			if (dim == 1) {
+				MMSP::grid<1,unsigned short> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,unsigned short> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,unsigned short> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			}
+		}
+		else if (short_type) {
+			if (dim == 1) {
+				MMSP::grid<1,short> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,short> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,short> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			}
+		}
+		else if (float_type) {
+			if (dim == 1) {
+				MMSP::grid<1,float> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,float> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,float> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			}
+		}
+		else if (long_double_type) {
+			if (dim == 1) {
+				MMSP::grid<1,long double> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,long double> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,long double> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			}
+		}
+		else if (double_type) {
+			if (dim == 1) {
+				MMSP::grid<1,double> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,double> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,double> GRID(argv[1]);
+				convert_scalars(GRID, csvfil);
+			}
+		}
+	}
 
-		else if (vector_type) {
-			if (bool_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::vector<bool> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::vector<bool> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::vector<bool> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				}
-			}
-			else if (unsigned_char_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::vector<unsigned char> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::vector<unsigned char> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::vector<unsigned char> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				}
-			}
-			else if (char_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::vector<char> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::vector<char> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::vector<char> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				}
-			}
-			else if (unsigned_int_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::vector<unsigned int> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::vector<unsigned int> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::vector<unsigned int> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				}
-			}
-			else if (int_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::vector<int> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::vector<int> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::vector<int> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				}
-			}
-			else if (unsigned_long_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::vector<unsigned long> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::vector<unsigned long> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::vector<unsigned long> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				}
-			}
-			else if (long_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::vector<long> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::vector<long> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::vector<long> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				}
-			}
-			else if (unsigned_short_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::vector<unsigned short> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::vector<unsigned short> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::vector<unsigned short> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				}
-			}
-			else if (short_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::vector<short> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::vector<short> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::vector<short> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				}
-			}
-			else if (float_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::vector<float> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::vector<float> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::vector<float> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				}
-			}
-			else if (long_double_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::vector<long double> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::vector<long double> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::vector<long double> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				}
-			}
-			else if (double_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::vector<double> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::vector<double> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::vector<double> > GRID(argv[1]);
-					convert_vectors(GRID, csvfil);
-				}
+	else if (vector_type) {
+		if (bool_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::vector<bool> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::vector<bool> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::vector<bool> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
 			}
 		}
+		else if (unsigned_char_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::vector<unsigned char> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::vector<unsigned char> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::vector<unsigned char> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			}
+		}
+		else if (char_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::vector<char> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::vector<char> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::vector<char> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			}
+		}
+		else if (unsigned_int_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::vector<unsigned int> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::vector<unsigned int> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::vector<unsigned int> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			}
+		}
+		else if (int_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::vector<int> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::vector<int> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::vector<int> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			}
+		}
+		else if (unsigned_long_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::vector<unsigned long> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::vector<unsigned long> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::vector<unsigned long> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			}
+		}
+		else if (long_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::vector<long> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::vector<long> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::vector<long> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			}
+		}
+		else if (unsigned_short_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::vector<unsigned short> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::vector<unsigned short> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::vector<unsigned short> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			}
+		}
+		else if (short_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::vector<short> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::vector<short> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::vector<short> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			}
+		}
+		else if (float_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::vector<float> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::vector<float> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::vector<float> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			}
+		}
+		else if (long_double_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::vector<long double> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::vector<long double> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::vector<long double> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			}
+		}
+		else if (double_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::vector<double> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::vector<double> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::vector<double> > GRID(argv[1]);
+				convert_vectors(GRID, csvfil);
+			}
+		}
+	}
 
-		else if (sparse_type) {
-			if (bool_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::sparse<bool> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::sparse<bool> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::sparse<bool> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				}
-			}
-			else if (unsigned_char_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::sparse<unsigned char> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::sparse<unsigned char> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::sparse<unsigned char> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				}
-			}
-			else if (char_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::sparse<char> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::sparse<char> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::sparse<char> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				}
-			}
-			else if (unsigned_int_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::sparse<unsigned int> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::sparse<unsigned int> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::sparse<unsigned int> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				}
-			}
-			else if (int_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::sparse<int> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::sparse<int> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::sparse<int> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				}
-			}
-			else if (unsigned_long_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::sparse<unsigned long> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::sparse<unsigned long> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::sparse<unsigned long> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				}
-			}
-			else if (long_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::sparse<long> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::sparse<long> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::sparse<long> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				}
-			}
-			else if (unsigned_short_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::sparse<unsigned short> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::sparse<unsigned short> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::sparse<unsigned short> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				}
-			}
-			else if (short_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::sparse<short> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::sparse<short> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::sparse<short> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				}
-			}
-			else if (float_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::sparse<float> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::sparse<float> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::sparse<float> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				}
-			}
-			else if (long_double_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::sparse<long double> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::sparse<long double> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::sparse<long double> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				}
-			}
-			else if (double_type) {
-				if (dim == 1) {
-					MMSP::grid<1,MMSP::sparse<double> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 2) {
-					MMSP::grid<2,MMSP::sparse<double> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				} else if (dim == 3) {
-					MMSP::grid<3,MMSP::sparse<double> > GRID(argv[1]);
-					convert_sparses(GRID, csvfil);
-				}
+	else if (sparse_type) {
+		if (bool_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::sparse<bool> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::sparse<bool> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::sparse<bool> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
 			}
 		}
+		else if (unsigned_char_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::sparse<unsigned char> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::sparse<unsigned char> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::sparse<unsigned char> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			}
+		}
+		else if (char_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::sparse<char> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::sparse<char> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::sparse<char> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			}
+		}
+		else if (unsigned_int_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::sparse<unsigned int> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::sparse<unsigned int> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::sparse<unsigned int> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			}
+		}
+		else if (int_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::sparse<int> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::sparse<int> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} else if (dim == 3) {
+				MMSP::grid<3,MMSP::sparse<int> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			}
+		}
+		else if (unsigned_long_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::sparse<unsigned long> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::sparse<unsigned long> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			}
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::sparse<unsigned long> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			}
+		}
+		else if (long_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::sparse<long> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::sparse<long> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::sparse<long> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			}
+		}
+		else if (unsigned_short_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::sparse<unsigned short> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::sparse<unsigned short> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::sparse<unsigned short> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			}
+		}
+		else if (short_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::sparse<short> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::sparse<short> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::sparse<short> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			}
+		}
+		else if (float_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::sparse<float> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::sparse<float> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::sparse<float> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			}
+		}
+		else if (long_double_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::sparse<long double> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::sparse<long double> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::sparse<long double> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			}
+		}
+		else if (double_type) {
+			if (dim == 1) {
+				MMSP::grid<1,MMSP::sparse<double> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 2) {
+				MMSP::grid<2,MMSP::sparse<double> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			} 
+			else if (dim == 3) {
+				MMSP::grid<3,MMSP::sparse<double> > GRID(argv[1]);
+				convert_sparses(GRID, csvfil);
+			}
+		}
+	}
 
 	return 0;
 }
