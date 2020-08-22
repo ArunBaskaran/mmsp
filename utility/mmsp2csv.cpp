@@ -1,6 +1,6 @@
 // mmsp2csv.cpp
 // Convert MMSP grid data to comma-delimited ASCII format (CSV)
-// Questions/comments to trevor.keller@gmail.com (Trevor Keller)
+// Questions/comments to trevor.keller@gmail.com (Trevor Keller) and arupad@gmail.com (Arun Baskaran)
 
 #include<iostream>
 #include<cstdlib>
